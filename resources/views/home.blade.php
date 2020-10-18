@@ -18,6 +18,9 @@
                     <br>
                     <br>
                     <a href="{{ route('employees.index') }}">Employee</a>
+                    <br>
+                    <br>
+                    <a href="{{ route('reminders.index') }}">Reminder</a>
                 </div>
             </div>
         </div>

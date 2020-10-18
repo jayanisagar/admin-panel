@@ -33,7 +33,7 @@
                                 {!! Form::label('last_name', trans('last_name').'*', ['class' => 'control-label']) !!}
                                 {!! Form::text('last_name', old('last_name'), ['class' => 'form-control', 'placeholder' => '']) !!}
                                 <p class="help-block"></p>
-                                @if($errors->has('first_name'))
+                                @if($errors->has('last_name'))
                                     <p class="help-block">
                                         {{ $errors->first('last_name') }}
                                     </p>
