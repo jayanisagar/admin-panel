@@ -43,5 +43,8 @@ class ReminderEmail extends Command
             ->count();
  
             echo "Today $count users registered";
+
+        \Log::info("Cron is working fine!",  $count);
+        $this->info('Demo:Cron Cummand Run successfully!');
     }
 }
