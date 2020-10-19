@@ -33,3 +33,27 @@ Route::get('send-mail', function () {
    
     dd("Email is Sent.");
 });
+
+Route::get('date', function () {
+   
+    $mytime = Carbon\Carbon::now();
+    echo $mytime->toDateTimeString();
+
+    $pieces = explode(" ", $mytime);
+
+    echo " ", $pieces[0];
+
+    $pieces[1] = "13:25:00";
+    $reminders = \App\Reminder::where([
+        ['date', '=', $pieces[0]],
+        ['time', '=', $pieces[1]]
+        ])->get();
+    echo " ", $reminders;
+
+    foreach ($reminders as $reminder) {
+        \Mail::to($reminder->email)->send(new \App\Mail\ReminderMail($reminder));
+    }
+
+    dd("Reminder is Sent.");
+});
+

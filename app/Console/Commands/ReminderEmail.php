@@ -46,5 +46,8 @@ class ReminderEmail extends Command
 
         \Log::info("Cron is working fine!",  $count);
         $this->info('Demo:Cron Cummand Run successfully!');
+
+
+        // Get Today Date
     }
 }
