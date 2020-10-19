@@ -21,3 +21,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('companies', 'CompanyController');
 Route::resource('employees', 'EmployeeController');
 Route::resource('reminders', 'ReminderController');
+
+Route::get('send-mail', function () {
+   
+    $details = [
+        'title' => 'Mail from REminder',
+        'body' => 'This is for testing email using smtp'
+    ];
+   
+    \Mail::to('jayanisagar@gmail.com')->send(new \App\Mail\MyTestMail($details));
+   
+    dd("Email is Sent.");
+});
